@@ -44,4 +44,14 @@ public class Fachada implements IFachada {
 		// TODO Auto-generated method stub
 		return this.controladorAluno.geraid();
 	}
+	@Override
+	public boolean comparaId(int id) {
+		// TODO Auto-generated method stub
+		return this.controladorAluno.comparaId(id);
+	}
+	@Override
+	public boolean comparaNome(String nome) {
+		// TODO Auto-generated method stub
+		return this.controladorAluno.comparaNome(nome);
+	}
 }

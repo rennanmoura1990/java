@@ -111,6 +111,14 @@ public class GUI {
 				a.setNome(txtNome.getText());
 				a.setIdade(Integer.parseInt(txtIdade.getText()));
 				a.setId(Integer.parseInt(txtID.getText()));
+				if(fachada.comparaId(a.getId()) == true){
+					JOptionPane.showMessageDialog(null, "ID existente!");
+					return;
+				}
+				if(fachada.comparaNome(a.getNome())== true){
+					JOptionPane.showMessageDialog(null, "Nome Existente");
+					return;
+				}
 				fachada.inserirAluno(a);
 				JOptionPane.showMessageDialog(null, "Aluno Inserido!");
 				iniciaid();

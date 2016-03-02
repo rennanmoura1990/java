@@ -75,4 +75,24 @@ public class RepAluno implements IRepAluno {
 		// TODO Auto-generated method stub
 		return id;
 	}
+	@Override
+	public boolean comparaId(int id){
+		boolean v = false;
+		for(Aluno a : alunos){
+			if(id == a.getId()){
+				v = true;
+			}
+		}
+		return v;
+	}
+	@Override
+	public boolean comparaNome(String nome){
+		boolean v = false;
+		for(Aluno a : alunos){
+			if(nome.equals(a.getNome())){
+				v = true;
+			}
+		}
+		return v;
+	}
 }

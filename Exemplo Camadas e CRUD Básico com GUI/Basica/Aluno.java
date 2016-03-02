@@ -38,7 +38,7 @@ public class Aluno {
 	public boolean equals(Object obj){
 		if(obj instanceof Aluno){
 			Aluno a = (Aluno) obj;
-			if((a.getNome() == this.getNome())){
+			if((a.getId() == this.getId())||(a.getNome() == this.getNome())){
 				return true;
 			}
 		}

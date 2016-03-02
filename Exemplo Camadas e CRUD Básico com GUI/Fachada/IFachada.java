@@ -11,4 +11,6 @@ public interface IFachada {
 	public void removerAluno (int id);
 	public Aluno buscarAluno (int id);
 	public ArrayList<Aluno> listarAluno();
+	public boolean comparaId(int id);
+	public boolean comparaNome(String nome);
 }

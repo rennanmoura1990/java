@@ -35,4 +35,10 @@ public class ControlAluno {
 	public int geraid(){
 		return this.repAluno.geraid();
 	}
+	public boolean comparaId(int id){
+		return this.repAluno.comparaId(id);
+	}
+	public boolean comparaNome(String nome){
+		return this.repAluno.comparaNome(nome);
+	}
 }

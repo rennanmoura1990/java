@@ -12,4 +12,6 @@ public interface IRepAluno {
 	public void removerAluno(int id);
 	public Aluno buscaAluno (int id);
 	public ArrayList<Aluno> listaAluno();
+	public boolean comparaId(int id);
+	public boolean comparaNome(String nome);
 }
