@@ -16,7 +16,7 @@ public class RepAluno implements IRepAluno {
 			id++;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 
@@ -32,7 +32,7 @@ public class RepAluno implements IRepAluno {
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 
@@ -44,7 +44,7 @@ public class RepAluno implements IRepAluno {
 			alunos.remove(a);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 
 	}
@@ -61,7 +61,7 @@ public class RepAluno implements IRepAluno {
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 		return a;
 	}

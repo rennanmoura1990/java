@@ -1,8 +1,6 @@
 package GUI;
 
 import java.awt.EventQueue;
-import java.awt.HeadlessException;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -20,7 +18,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.border.BevelBorder;
 import javax.swing.ListSelectionModel;
 
 public class GUI {
@@ -77,7 +74,7 @@ public class GUI {
 		txtID.setColumns(10);
 
 		txtNome = new JTextField();
-		txtNome.setBounds(75, 44, 220, 20);
+		txtNome.setBounds(75, 44, 271, 20);
 		frmCrudAlunos.getContentPane().add(txtNome);
 		txtNome.setColumns(10);
 
@@ -209,8 +206,8 @@ public class GUI {
 						return;
 					}
 					a = fachada.buscarAluno(Integer.parseInt(txtBuscaID.getText()));
-					if(a == null){
-						JOptionPane.showMessageDialog(null, "Não achou!");
+					if((a.getNome() == null)){
+						JOptionPane.showMessageDialog(null, "Não Achou!");
 						return;
 					}
 					String buscou = a.toString();
@@ -224,6 +221,16 @@ public class GUI {
 		txtBuscaID.setBounds(300, 76, 46, 20);
 		frmCrudAlunos.getContentPane().add(txtBuscaID);
 		txtBuscaID.setColumns(10);
+		
+		JButton btnVoltarCadastrar = new JButton("Voltar Cadastrar");
+		btnVoltarCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				iniciaid();
+				limpacampos();
+			}
+		});
+		btnVoltarCadastrar.setBounds(171, 11, 175, 23);
+		frmCrudAlunos.getContentPane().add(btnVoltarCadastrar);
 	}
 
 	/**
