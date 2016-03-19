@@ -1,91 +1,107 @@
 import java.util.*;
 
 public class Atividade01 {
-	static double valorTotal = 0;
 
-	public static void calculaResidencial(double valor) {
+	public static double calculaResidencial(double valor) {
 		double iptu = 0;
-		if (valor >= 0 && valor <= 95450) {
+		if (valor <= 95450) {
 			iptu = valor * 0.006;
-			valorTotal += iptu;
+		} else if (valor <= 238626) {
+			iptu = 95450 * 0.006;
+			iptu += (valor - 95450) * 0.007;
+		} else if (valor <= 417596) {
+			iptu = 95450 * 0.006;
+			iptu += 143176 * 0.007;
+			iptu += (valor - 238626) * 0.0075;
+		} else if (valor <= 715879) {
+			iptu = 95450 * 0.006;
+			iptu += 143176 * 0.007;
+			iptu += 178970 * 0.0075;
+			iptu += (valor - 417596) * 0.008;
+		} else if (valor <= 954505) {
+			iptu = 95450 * 0.006;
+			iptu += 143176 * 0.007;
+			iptu += 178970 * 0.0075;
+			iptu += 298283 * 0.008;
+			iptu += (valor - 715879) * 0.0085;
+		} else if (valor <= 1193131) {
+			iptu = 95450 * 0.006;
+			iptu += 143176 * 0.007;
+			iptu += 178970 * 0.0075;
+			iptu += 298283 * 0.008;
+			iptu += 238626 * 0.0085;
+			iptu += (valor - 954505) * 0.009;
+		} else {
+			iptu = 95450 * 0.006;
+			iptu += 143176 * 0.007;
+			iptu += 178970 * 0.0075;
+			iptu += 298283 * 0.008;
+			iptu += 238626 * 0.0085;
+			iptu += 238626 * 0.009;
+			iptu += (valor - 1193131) * 0.01;
 		}
-		if (valor >= 95450.01 && valor <= 238626) {
-			iptu = valor * 0.007;
-			valorTotal += iptu;
-		}
-		if (valor >= 238626.01 && valor <= 417596) {
-			iptu = valor * 0.0075;
-			valorTotal += iptu;
-		}
-		if (valor >= 417596.01 && valor <= 715879) {
-			iptu = valor * 0.008;
-			valorTotal += iptu;
-		}
-		if (valor >= 715879.01 && valor <= 954505) {
-			iptu = valor * 0.0085;
-			valorTotal += iptu;
-		}
-		if (valor >= 954505.01 && valor <= 1193131) {
-			iptu = valor * 0.009;
-			valorTotal += iptu;
-		}
-		if (valor >= 1193131.01) {
-			iptu = valor * 0.01;
-			valorTotal += iptu;
-		}
+		return iptu;
 	}
 
-	public static void calculaNResidencial(double valor) {
+	public static double calculaNResidencial(double valor) {
 		double iptu = 0;
-		if (valor >= 0 && valor <= 35793) {
+		if (valor <= 35793) {
 			iptu = valor * 0.012;
-			valorTotal += iptu;
 		}
-		if (valor >= 35793.01 && valor <= 119313) {
-			iptu = valor * 0.013;
-			valorTotal += iptu;
+		else if (valor <= 119313) {
+			iptu = 35793 * 0.012;
+			iptu += (valor-35793) * 0.013;
 		}
-		if (valor >= 119313.01 && valor <= 596565) {
-			iptu = valor * 0.014;
-			valorTotal += iptu;
+		else if (valor <= 596565) {
+			iptu = 35793 * 0.012;
+			iptu += 83520 * 0.013;
+			iptu += (valor-119313) * 0.014;
 		}
-		if (valor >= 596565.01 && valor <= 1193131) {
-			iptu = valor * 0.015;
-			valorTotal += iptu;
+		else if (valor <= 1193131) {
+			iptu = 35793 * 0.012;
+			iptu += 83520 * 0.013;
+			iptu += 477252 * 0.014;
+			iptu += (valor-596565) * 0.015;
 		}
-		if (valor >= 1193131.01) {
-			iptu = valor * 0.016;
-			valorTotal += iptu;
+		else{
+			iptu = 35793 * 0.012;
+			iptu += 83520 * 0.013;
+			iptu += 477252 * 0.014;
+			iptu += 596566 * 0.015;
+			iptu += (valor-1193131) * 0.016;
 		}
+		return iptu;
 	}
 
-	public static void calculaTerritorial(double valor) {
+	public static double calculaTerritorial(double valor) {
 		double iptu = 0;
-		if (valor >= 0 && valor <= 47724) {
+		if (valor <= 47724) {
 			iptu = valor * 0.01;
-			valorTotal += iptu;
+		} else if (valor <= 357939) {
+			iptu = 47724 * 0.01;
+			iptu += (valor - 47724) * 0.016;
+
+		} else if (valor <= 715879) {
+			iptu = 47724 * 0.01;
+			iptu += 310215 * 0.016;
+			iptu += (valor - 357939) * 0.02;
+		} else if (valor <= 1193131) {
+			iptu = 47724 * 0.01;
+			iptu += 310215 * 0.016;
+			iptu += 357940 * 0.02;
+			iptu += (valor - 715879) * 0.025;
+		} else {
+			iptu = 47724 * 0.01;
+			iptu += 310215 * 0.016;
+			iptu += 357940 * 0.02;
+			iptu += (valor - 477252) * 0.025;
+			iptu += (valor - 1193131) * 0.03;
 		}
-		if (valor >= 47724.01 && valor <= 357939) {
-			iptu = valor * 0.016;
-			valorTotal += iptu;
-		}
-		if (valor >= 357939.01 && valor <= 715879) {
-			iptu = valor * 0.02;
-			valorTotal += iptu;
-		}
-		if (valor >= 715879.01 && valor <= 1193131) {
-			iptu = valor * 0.025;
-			valorTotal += iptu;
-		}
-		if (valor >= 1193131.01) {
-			iptu = valor * 0.03;
-			valorTotal += iptu;
-		}
+		return iptu;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int i;
 		Scanner s = new Scanner(System.in);
 		System.out.println("-----Calcula IPTU----");
 		System.out.println("(1)Residencial");
@@ -93,41 +109,25 @@ public class Atividade01 {
 		System.out.println("(3)Territorial");
 		System.out.println("---------------------");
 		int op = s.nextInt();
-		int qtdFaixa = 0;
 		double valor = 0;
 		switch (op) {
 		case 1:
-			System.out.println("Digite a Quantidade de Faixas");
-			qtdFaixa = s.nextInt();
-			for (i = 0; i < qtdFaixa; i++) {
-				int j = i + 1;
-				System.out.println("Digite o " + j + "º valor");
+			System.out.println("Digite o Valor");
 				valor = s.nextDouble();
-				calculaResidencial(valor);
-			}
-			System.out.println("O valor total é de : " + valorTotal);
+				
+			System.out.println("O valor total é de : " + calculaResidencial(valor));
 			break;
 		case 2:
-			System.out.println("Digite a Quantidade de Faixas");
-			qtdFaixa = s.nextInt();
-			for (i = 0; i < qtdFaixa; i++) {
-				int j = i + 1;
-				System.out.println("Digite o " + j + "º valor");
+			System.out.println("Digite o Valor");
 				valor = s.nextDouble();
-				calculaNResidencial(valor);
-			}
-			System.out.println("O valor total é de : " + valorTotal);
+				
+			System.out.println("O valor total é de : " + calculaNResidencial(valor));
 			break;
 		case 3:
-			System.out.println("Digite a Quantidade de Faixas");
-			qtdFaixa = s.nextInt();
-			for (i = 0; i < qtdFaixa; i++) {
-				int j = i + 1;
-				System.out.println("Digite o " + j + "º valor");
+			System.out.println("Digite o Valor");
 				valor = s.nextDouble();
-				calculaTerritorial(valor);
-			}
-			System.out.println("O valor total é de : " + valorTotal);
+				
+			System.out.println("O valor total é de : " + calculaTerritorial(valor));
 			break;
 		}
 	}
